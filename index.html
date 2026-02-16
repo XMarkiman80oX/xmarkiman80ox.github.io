@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Firsthand Humble Goldfish</title>
-    <meta property="og:title" content="Firsthand Humble Goldfish" />
+    <title>Macario Laurel's Porfolio</title>
+    <meta property="og:title" content="Macario Laurel's Porfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
+    
+    <link rel="icon" href="https://img.icons8.com/dusk/64/000000/console.png" type="image/png" />
 
     <style data-tag="reset-style-sheet">
       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
@@ -62,273 +64,392 @@
       rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
+    
+    <style>
+      /* OVERRIDE: Spacing reduced to 5rem (was 10rem) */
+      .project-thumbnails {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+      }
+
+      /* Styles for Technical Arsenal Section */
+      .skills-section {
+        padding: 5rem 0;
+        background-color: #0f0f0f;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skills-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .skills-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      /* Color Updates for Text */
+      .skills-header .section-title {
+        color: #4fc3f7 !important; /* Lighter Blue / Cyan */
+      }
+
+      .skills-header .section-subtitle {
+        color: #b3e5fc !important; /* Very pale blue to match */
+        opacity: 0.9;
+      }
+
+      /* UPDATED: Changed from Grid to Flexbox for better centering */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* This centers the cards in the row */
+        gap: 2rem;
+      }
+
+      /* The Card Design */
+      .tech-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        
+        /* UPDATED: Flex sizing to mimic grid but allows centering */
+        flex: 1 1 300px;
+        max-width: 380px; /* Prevents card from stretching too wide when alone */
+        width: 100%;
+      }
+
+      .tech-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #32e0c4, #2d9cdb);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+
+      .tech-card:hover::before {
+        opacity: 1;
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1.5rem;
+        color: #32e0c4;
+      }
+
+      .card-title {
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+
+      /* UPDATED: Skill List Styles for Icons */
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skill-item {
+        margin-bottom: 0.8rem;
+        color: #e0e0e0;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        font-size: 1.05rem;
+        padding: 0.2rem 0;
+      }
+
+      /* New Icon Styles */
+      .skill-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        object-fit: contain;
+      }
+
+      /* Utility to make black icons white */
+      .icon-filter-white {
+        filter: brightness(0) invert(1);
+      }
+
+      /* Custom Github Button Styles with !important */
+      .btn-github {
+        border-color: #6e5494 !important;
+        color: #6e5494 !important;
+        background-color: transparent !important;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover State: Purple BG, White Text/Border */
+      .btn-github:hover {
+        background-color: #6e5494 !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      /* Custom Gmail Button Styles with !important */
+      .btn-gmail {
+        border-color: #EA4335 !important;
+        color: #EA4335 !important;
+        background-color: transparent !important;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover State: Red BG, White Text/Border */
+      .btn-gmail:hover {
+        background-color: #EA4335 !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      /* Layout Fixes for Name and Picture */
+      .profile-hero-visual-col {
+        display: flex !important;
+        flex-direction: column !important; /* This forces Vertical Stacking */
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .hero-name-label {
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 1.5rem;
+        letter-spacing: 0.05em;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        width: 100%;
+      }
+
+      /* Sticky Header Styles */
+      .sticky-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.85); /* Dark semi-transparent */
+        backdrop-filter: blur(12px); /* Glass blur effect */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9999;
+        transition: all 0.3s ease;
+      }
+
+      .nav-logo {
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-logo svg {
+        color: #32e0c4;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-link {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: #ccc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: #32e0c4;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #32e0c4;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          gap: 1rem;
+        }
+        .nav-link {
+          font-size: 0.85rem;
+        }
+        .sticky-navbar {
+          padding: 0.8rem 1rem;
+        }
+      }
+
+      /* CSS for Audio Buttons inside the Modal */
+      .audio-modal-container {
+        margin-bottom: 1.5rem; 
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1); 
+      }
+      
+      .audio-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .btn-audio {
+        border: 1px solid #32e0c4; 
+        background-color: #333; 
+        color: #32e0c4;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+      }
+
+      .btn-audio:hover, .btn-audio.active-audio {
+        background-color: #32e0c4;
+        color: #000;
+        font-weight: 700;
+      }
+
+      /* Styles for Screenshot Gallery */
+      .screenshot-gallery-container {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .gallery-title {
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      /* Increased Grid Size for Bigger Images */
+      .screenshot-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 15px;
+      }
+
+      /* Smaller Grid Size for specific projects */
+      .screenshot-grid-small {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+      }
+
+      .project-screenshot {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        background-color: #f0f0f0;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      /* Portrait Aspect Ratio for Mobile Apps */
+      .project-screenshot-portrait {
+        width: 100%;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        background-color: #f0f0f0;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      .project-screenshot:hover, .project-screenshot-portrait:hover {
+        transform: scale(1.05);
+        border-color: #32e0c4;
+      }
+    </style>
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
     <div>
       <link href="./index.css" rel="stylesheet" />
 
+      <header class="sticky-navbar">
+        <a href="#" class="nav-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4"/><path d="M8 10v4"/><circle cx="17" cy="12" r="0.5" fill="currentColor"/></svg>
+          Macario Laurel
+        </a>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#resume" class="nav-link">Resume</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
       <div class="home-container1">
-        <navigation-wrapper class="navigation-wrapper">
-          <!--Navigation component-->
-          <div class="navigation-container1">
-            <nav id="mainNavigation" class="navigation-wrapper">
-              <div class="navigation-container">
-                <a href="index.html">
-                  <div
-                    aria-label="DevShowcase Home"
-                    class="navigation-logo-link"
-                  >
-                    <div class="navigation-logo-icon">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 12h4m-2-2v4m7-1h.01M18 11h.01"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                        <rect x="2" y="6" rx="2" width="20" height="12"></rect>
-                      </svg>
-                    </div>
-                    <span class="navigation-brand-name section-title">
-                      DevShowcase
-                    </span>
-                  </div>
-                </a>
-                <div class="navigation-desktop-menu">
-                  <ul class="navigation-links-list">
-                    <li class="navigation-link-item">
-                      <a href="index.html">
-                        <div class="navigation-link"><span>Projects</span></div>
-                      </a>
-                    </li>
-                    <li class="navigation-link-item">
-                      <a href="index.html">
-                        <div class="navigation-link"><span>Resume</span></div>
-                      </a>
-                    </li>
-                    <li class="navigation-link-item">
-                      <a href="index.html">
-                        <div class="navigation-link"><span>Contact</span></div>
-                      </a>
-                    </li>
-                  </ul>
-                  <a href="mailto:contact@devshowcase.com?subject=">
-                    <div class="btn navigation-cta btn-primary btn-sm">
-                      <span>Hire Me</span>
-                    </div>
-                  </a>
-                </div>
-                <button
-                  id="mobileMenuOpen"
-                  aria-label="Open Menu"
-                  aria-controls="mobileOverlay"
-                  aria-expanded="false"
-                  class="navigation-mobile-toggle"
-                >
-                  <svg
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M4 6h16M4 12h16M4 18h16"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </nav>
-            <div
-              id="mobileOverlay"
-              aria-hidden="true"
-              class="navigation-mobile-overlay"
-            >
-              <div class="navigation-overlay-header">
-                <a href="index.html">
-                  <div class="navigation-logo-link">
-                    <div class="navigation-logo-icon">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 12h4m-2-2v4m7-1h.01M18 11h.01"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                        <rect x="2" y="6" rx="2" width="20" height="12"></rect>
-                      </svg>
-                    </div>
-                    <span class="navigation-brand-name section-title">
-                      DevShowcase
-                    </span>
-                  </div>
-                </a>
-                <button
-                  id="mobileMenuClose"
-                  aria-label="Close Menu"
-                  class="navigation-mobile-toggle"
-                >
-                  <svg
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect x="3" y="3" rx="2" width="18" height="18"></rect>
-                      <path d="M9 16l3-3l3 3"></path>
-                    </g>
-                  </svg>
-                </button>
-              </div>
-              <div class="navigation-overlay-content">
-                <ul class="navigation-mobile-links">
-                  <li class="navigation-mobile-item">
-                    <a href="index.html">
-                      <div class="navigation-mobile-link">
-                        <span>Projects</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="navigation-mobile-item">
-                    <a href="index.html">
-                      <div class="navigation-mobile-link">
-                        <span>Resume</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="navigation-mobile-item">
-                    <a href="index.html">
-                      <div class="navigation-mobile-link">
-                        <span>Contact</span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <div class="navigation-overlay-footer">
-                  <a href="mailto:contact@devshowcase.com?subject=">
-                    <div class="btn navigation-mobile-cta btn-lg btn-primary">
-                      <span>Get In Touch</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="navigation-container2">
-              <div class="navigation-container3">
-                <style>
-                  @media (prefers-reduced-motion: reduce) {
-                  .navigation-mobile-link:hover {
-                    transform: none;
-                  }
-                  .navigation-link::after {
-                    transition: none;
-                  }
-                  }
-                </style>
-              </div>
-            </div>
-            <div class="navigation-container4">
-              <div class="navigation-container5">
-                <script defer="" data-name="navigation-logic">
-                  document.addEventListener('DOMContentLoaded', function() {
-                    (function(){
-                      const openBtn = document.getElementById("mobileMenuOpen")
-                      const closeBtn = document.getElementById("mobileMenuClose")
-                      const mobileOverlay = document.getElementById("mobileOverlay")
-                      const body = document.body
-
-                      const toggleMenu = (isOpen) => {
-                        mobileOverlay.setAttribute("aria-hidden", !isOpen)
-                        openBtn.setAttribute("aria-expanded", isOpen)
-
-                        if (isOpen) {
-                          body.style.overflow = "hidden"
-                          // Simple stagger animation for links
-                          const links = mobileOverlay.querySelectorAll(".navigation-mobile-item")
-                          links.forEach((link, index) => {
-                            link.style.opacity = "0"
-                            link.style.transform = "translateY(20px)"
-                            setTimeout(() => {
-                              link.style.transition = "all 0.4s ease-out"
-                              link.style.opacity = "1"
-                              link.style.transform = "translateY(0)"
-                            }, 100 + index * 100)
-                          })
-                        } else {
-                          body.style.overflow = ""
-                        }
-                      }
-
-                      openBtn.addEventListener("click", () => toggleMenu(true))
-                      closeBtn.addEventListener("click", () => toggleMenu(false))
-
-                      // Close menu when a link is clicked
-                      const mobileLinks = mobileOverlay.querySelectorAll(".navigation-mobile-link")
-                      mobileLinks.forEach((link) => {
-                        link.addEventListener("click", () => toggleMenu(false))
-                      })
-
-                      // Handle ESC key to close menu
-                      window.addEventListener("keydown", (e) => {
-                        if (e.key === "Escape" && mobileOverlay.getAttribute("aria-hidden") === "false") {
-                          toggleMenu(false)
-                        }
-                      })
-
-                      // Sticky header background shift on scroll
-                      window.addEventListener("scroll", () => {
-                        const nav = document.getElementById("mainNavigation")
-                        if (window.scrollY > 20) {
-                          nav.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.05)"
-                          nav.style.padding = "0"
-                        } else {
-                          nav.style.boxShadow = "none"
-                          nav.style.padding = "0"
-                        }
-                      })
-                    })()
-                  });
-                </script>
-              </div>
-            </div>
-          </div>
-        </navigation-wrapper>
+        
         <section class="profile-hero">
           <div class="profile-hero-overlay"></div>
           <div class="profile-hero-content">
             <div class="profile-hero-split">
               <div class="profile-hero-text-col">
-                <h1 class="hero-title">DevShowcase</h1>
-                <p class="hero-subtitle">
-                  Game Developer &amp; Creative Architect. Crafting immersive
-                  digital worlds through code and imagination. Specialized in
-                  Unreal Engine and high-fidelity interactive experiences.
+                <h1 class="hero-title">ABOUT ME</h1>
+                <p class="hero-subtitle" style="text-align: justify;">
+                  Hello! My name is Macario Laurel, but you can call me Marco. All my life
+                  I've been passionate about the entertainment industry, most especially the video game industry.
+                  I have been eager to learn more about that industry and how games are made, which led me to pursue a career in game development.
+                  I have a background in game development, with knowledge in Unreal Engine 5, Unity, and Godot. 
+                  My programming skills include C, C++, C#, Python, SQL, and Blueprints (Visual Scripting). 
+                  I'm proficient with tools like GitHub, Visual Studio, and MySQL, and a bit of Tracktion Waveform for audio. 
+                  I'm always eager to take on exciting projects that push the boundaries of interactive entertainment.
                 </p>
                 <div class="profile-hero-actions">
                   <a href="#projects">
@@ -352,611 +473,430 @@
                 <div class="profile-hero-image-wrapper">
                   <img
                     alt="Game Developer Profile"
-                    src="https://images.pexels.com/photos/31987226/pexels-photo-31987226.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                    src="./assets/Marco_Profile_Pic.jpg"
                     class="profile-hero-img"
                   />
                   <div class="profile-hero-glitch-layer"></div>
                 </div>
+                <h3 class="hero-name-label">Macario Alejandro V. Laurel</h3>
               </div>
             </div>
           </div>
         </section>
+        
         <section id="projects" class="project-thumbnails">
           <div class="project-thumbnails-container">
             <div class="project-thumbnails-header">
-              <h2 class="section-title">Project Archive</h2>
-              <p class="section-subtitle">
-                A collection of technical demos, game jams, and full-scale
-                productions.
-              </p>
+              <h2 class="section-title">My Games & Projects</h2>
             </div>
             <div class="project-thumbnails-grid">
+
               <div class="project-card">
                 <img
-                  alt="Cyberpunk Neon Project"
-                  src="https://images.pexels.com/photos/6498299/pexels-photo-6498299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Semester Saga"
+                  src="./assets/Semester Saga Thumbnail.png"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Neon Protocol</span>
+                  <span class="project-card-title">Semester Saga</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+
               <div class="project-card">
                 <img
-                  alt="VR Arena Project"
-                  src="https://images.pexels.com/photos/6498780/pexels-photo-6498780.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Kalu-Cookan"
+                  src="./assets/Kalu-Cookan Thumbnail.png"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Void Walker VR</span>
+                  <span class="project-card-title">Kalu-Cookan (Development In-Progress Game)</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+              
               <div class="project-card">
                 <img
-                  alt="Futuristic Setup Project"
-                  src="https://images.pexels.com/photos/9794458/pexels-photo-9794458.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="The Stormy Woods"
+                  src="https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Circuit Breaker</span>
+                  <span class="project-card-title">The Stormy Woods</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+
               <div class="project-card">
                 <img
-                  alt="Anime Tech Project"
-                  src="https://images.pexels.com/photos/33050960/pexels-photo-33050960.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Mystic Warriors"
+                  src="./assets/Mystic Warriors Quest of the Elements Thumbnail.png"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Pixel Drift</span>
+                  <span class="project-card-title">Mystic Warriors: Quest of The Elements</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+
               <div class="project-card">
                 <img
-                  alt="Motorbike Simulator Project"
-                  src="https://images.pexels.com/photos/6499004/pexels-photo-6499004.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Panophobia"
+                  src="./assets/Panophobia Thumbnail.png"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Velocity 2077</span>
+                  <span class="project-card-title">Panophobia</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+
               <div class="project-card">
                 <img
-                  alt="RGB Tech Project"
-                  src="https://images.pexels.com/photos/33050962/pexels-photo-33050962.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Asteroid Flash"
+                  src="assets/Asteroid Flash Thumbnail.png"
                   class="project-card-img"
                 />
                 <div class="project-card-overlay">
-                  <span class="project-card-title">Shadow Core</span>
+                  <span class="project-card-title">Asteroid Flash</span>
                   <a href="#">
                     <div class="btn btn-accent btn-sm">
-                      <span>Explore Case</span>
+                      <span>View Project Details</span>
                     </div>
                   </a>
                 </div>
               </div>
+
+              <div class="project-card">
+                <img
+                  alt="Text Based Pokémon Game"
+                  src="./assets/A Text Based Pokemon Game Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">A Text-Based "Pokémon" Game</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="Battle Tank with AI"
+                  src="./assets/Battle Tank Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">Battle Tank with AI</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="Elden Rogue"
+                  src="/assets/Elden Rogue Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">Elden Rogue: A Text-Based RPG</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="C++ Physics Engine"
+                  src="./assets/Physics Engine Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">C++ Coded Physics Engine From Scratch</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="Furnished Apartment UE5"
+                  src="./assets/Furnished Apartment Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">Furnished Apartment Designed in Unreal Engine 5</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="Receipt Buddy App"
+                  src="./assets/Receipt Buddy Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">Receipt Buddy</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  alt="Baldur's Door Unity"
+                  src="./assets/Baldurs Gate Mobile Thumbnail.png"
+                  class="project-card-img"
+                />
+                <div class="project-card-overlay">
+                  <span class="project-card-title">Baldur's Door (A Unity-Developed Baldur's Gate Inspired Project)</span>
+                  <a href="#">
+                    <div class="btn btn-accent btn-sm">
+                      <span>View Project Details</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
-        <section class="short-about">
-          <div class="short-about-container">
-            <div class="short-about-split">
-              <div class="short-about-content-col">
-                <h2 class="section-title">The Developer</h2>
-                <p class="section-content">
-                  I am a passionate Game Developer dedicated to pushing the
-                  boundaries of interactive storytelling. My work focuses on
-                  high-performance rendering, complex systems architecture, and
-                  intuitive player mechanics. Whether it's a mobile indie hit or
-                  a cinematic VR experience, I bring technical precision and
-                  creative flair to every line of code.
-                </p>
-                <div class="short-about-stats">
-                  <div class="stat-item">
-                    <span class="stat-value">5+</span>
-                    <span class="stat-label">Years Exp</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-value">12</span>
-                    <span class="stat-label">Games Shipped</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-value">3</span>
-                    <span class="stat-label">Game Jams Won</span>
-                  </div>
-                </div>
+
+        <section class="skills-section">
+          <div class="skills-container">
+            <div class="skills-header">
+              <h2 class="section-title">Technical Arsenal</h2>
+              <p class="section-subtitle">The game engines and languages skillset.</p>
+            </div>
+
+            <div class="skills-grid">
+              
+              <div class="tech-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <h3 class="card-title">Engine & Systems</h3>
+                <ul class="skill-list">
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" class="skill-icon icon-filter-white" alt="Unreal Logo">
+                    Unreal Engine 5
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" class="skill-icon icon-filter-white" alt="Unity Logo">
+                    Unity
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" class="skill-icon" alt="Godot Logo">
+                    Godot
+                  </li>
+                  <li class="skill-item">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="#32e0c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    Adalo
+                  </li>
+                </ul>
               </div>
-              <div class="short-about-skills-col">
-                <div class="skills-grid">
-                  <div class="skill-tag">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M6 12h4m-2-2v4m7-1h.01M18 11h.01"></path>
-                        <rect x="2" y="6" rx="2" width="20" height="12"></rect>
-                      </g>
-                    </svg>
-                    <span>Unreal Engine 5</span>
-                  </div>
-                  <div class="skill-tag">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m16 18l6-6l-6-6M8 6l-6 6l6 6"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                    <span>C++ / Blueprints</span>
-                  </div>
-                  <div class="skill-tag">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M11.146 15.854a1.207 1.207 0 0 1 1.708 0l1.56 1.56A2 2 0 0 1 15 18.828V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.172a2 2 0 0 1 .586-1.414zM18.828 15a2 2 0 0 1-1.414-.586l-1.56-1.56a1.207 1.207 0 0 1 0-1.708l1.56-1.56A2 2 0 0 1 18.828 9H21a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-12.242-.586A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708zM9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                    <span>Physics Systems</span>
-                  </div>
-                  <div class="skill-tag">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <rect x="3" y="3" rx="1" width="5" height="5"></rect>
-                        <rect x="16" y="3" rx="1" width="5" height="5"></rect>
-                        <rect x="3" y="16" rx="1" width="5" height="5"></rect>
-                        <path
-                          d="M21 16h-3a2 2 0 0 0-2 2v3m5 0v.01M12 7v3a2 2 0 0 1-2 2H7m-4 0h.01M12 3h.01M12 16v.01M16 12h1m4 0v.01M12 21v-1"
-                        ></path>
-                      </g>
-                    </svg>
-                    <span>Shaders &amp; VFX</span>
-                  </div>
-                </div>
+
+              <div class="tech-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <h3 class="card-title">Languages & Logic</h3>
+                <ul class="skill-list">
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="skill-icon" alt="C Logo">
+                    C
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="skill-icon" alt="C++ Logo">
+                    C++
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="skill-icon" alt="C# Logo">
+                    C#
+                  </li>
+                  <li class="skill-item">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="#68a063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    Blueprints (Visual Scripting)
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="Python Logo">
+                    Python
+                  </li>
+                  <li class="skill-item">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="#00758f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    SQL
+                  </li>
+                </ul>
               </div>
+
+              <div class="tech-card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                <h3 class="card-title">Toolkit</h3>
+                <ul class="skill-list">
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="skill-icon icon-filter-white" alt="GitHub Logo">
+                    Github
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg" class="skill-icon" alt="VS Logo">
+                    Visual Studio
+                  </li>
+                  <li class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="skill-icon" alt="MySQL Logo">
+                    MySQL
+                  </li>
+                  <li class="skill-item">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="#1199ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="1" x2="12" y2="23"></line>
+                      <line x1="8" y1="5" x2="8" y2="19"></line>
+                      <line x1="16" y1="5" x2="16" y2="19"></line>
+                      <line x1="4" y1="9" x2="4" y2="15"></line>
+                      <line x1="20" y1="9" x2="20" y2="15"></line>
+                    </svg>
+                    Tracktion Waveform
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </section>
-        <section class="featured-spotlight">
-          <div class="featured-spotlight-container">
-            <div class="featured-card">
-              <div class="featured-card-visual">
-                <img
-                  alt="Cyber Reality Spotlight"
-                  src="https://images.pexels.com/photos/7773727/pexels-photo-7773727.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  class="featured-card-img"
-                />
-                <div class="featured-badge">
-                  <span>Featured Masterpiece</span>
-                </div>
-              </div>
-              <div class="featured-card-content">
-                <h2 class="section-title">Project: Cyber Reality</h2>
-                <p class="section-content">
-                  An award-winning VR exploration game that pushes the limits of
-                  sensory immersion. Cyber Reality features a dynamic AI-driven
-                  ecosystem and real-time ray-traced lighting, creating a living
-                  city that reacts to every player's decision.
-                </p>
-                <div class="featured-details">
-                  <div class="detail-item">
-                    <strong>Engine:</strong>
-                    <span>Unreal Engine 5.2</span>
-                  </div>
-                  <div class="detail-item">
-                    <strong>Platform:</strong>
-                    <span>PC / VR</span>
-                  </div>
-                  <div class="detail-item">
-                    <strong>Role:</strong>
-                    <span>Lead Tech Developer</span>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="btn btn-lg btn-primary">
-                    <span>Deep Dive into Project</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="contact" class="resume-contact-cta">
-          <div class="resume-contact-container">
-            <div class="cta-grid">
-              <div id="resume" class="cta-item">
-                <div class="cta-icon-box">
-                  <svg
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
-                      ></path>
-                      <path
-                        d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <h3 class="section-subtitle">Professional Resume</h3>
-                <p class="section-content">
-                  Download my full CV for a detailed overview of my experience
-                  and certifications.
-                </p>
-                <a href="#">
-                  <div class="btn btn-lg btn-secondary">
-                    <span>Download CV</span>
-                  </div>
-                </a>
-              </div>
-              <div class="cta-item">
-                <div class="cta-icon-box">
-                  <svg
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-                      <rect x="2" y="4" rx="2" width="20" height="16"></rect>
-                    </g>
-                  </svg>
-                </div>
-                <h3 class="section-subtitle">Get In Touch</h3>
-                <p class="section-content">
-                  Interested in a collaboration or have a project in mind? Let's
-                  connect.
-                </p>
-                <a href="mailto:dev@gmail.com?subject=">
-                  <div class="btn btn-lg btn-primary">
-                    <span>Send Email</span>
-                  </div>
-                </a>
-              </div>
-              <div class="cta-item">
-                <div class="cta-icon-box">
-                  <svg
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6 11h4M8 9v4m7-1h.01M18 10h.01m-.69-5H6.68a4 4 0 0 0-3.978 3.59l-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258q-.01-.075-.017-.151A4 4 0 0 0 17.32 5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="section-subtitle">Game Dev Logs</h3>
-                <p class="section-content">
-                  Follow my development process and technical deep dives on my
-                  blog.
-                </p>
-                <a href="#">
-                  <div class="btn btn-outline btn-lg">
-                    <span>Read Logs</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="home-container2">
-          <div class="home-container3">
-            <style>
-              section {
-                padding: var(--spacing-4xl) 0;
-                overflow: hidden;
-                position: relative;
-              }
-            </style>
-          </div>
-        </div>
-        <div class="home-container4">
-          <div class="home-container5">
-            <script defer="" data-name="dev-showcase-interactions">
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Intersection Observer for fade-in effects
-                  const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: "0px 0px -50px 0px",
-                  }
 
-                  const fadeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                      if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1"
-                        entry.target.style.transform = "translateY(0)"
-                        fadeObserver.unobserve(entry.target)
-                      }
-                    })
-                  }, observerOptions)
-
-                  // Apply initial styles and observe elements
-                  document.querySelectorAll(".project-card, .cta-item, .featured-card, .stat-item").forEach((el) => {
-                    el.style.opacity = "0"
-                    el.style.transform = "translateY(30px)"
-                    el.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
-                    fadeObserver.observe(el)
-                  })
-
-                  // Subtle parallax for hero image
-                  window.addEventListener("scroll", () => {
-                    const scrolled = window.pageYOffset
-                    const heroImg = document.querySelector(".profile-hero-img")
-                    if (heroImg) {
-                      heroImg.style.transform = `translateY(${scrolled * 0.1}px)`
-                    }
-                  })
-
-                  // Button hover effect enhancement
-                  document.querySelectorAll(".btn").forEach((button) => {
-                    button.addEventListener("mouseenter", () => {
-                      button.style.transform = "scale(1.02)"
-                    })
-                    button.addEventListener("mouseleave", () => {
-                      button.style.transform = "scale(1)"
-                    })
-                  })
-                })()
-              });
-            </script>
-          </div>
-        </div>
         <footer-wrapper class="footer-wrapper">
-          <!--Footer component-->
           <div class="footer-container1">
             <footer class="footer-root">
               <div class="footer-overlay"></div>
               <div class="footer-container">
                 <div class="footer-brand-section">
                   <div class="footer-logo-wrapper">
-                    <span class="footer-logo-text">DevShowcase</span>
-                    <div class="footer-status-indicator">
-                      <span class="footer-status-dot"></span>
-                      <span class="footer-status-label">
-                        Available for Projects
-                      </span>
-                    </div>
+                    <span class="footer-logo-text">My Links</span>
                   </div>
-                  <p class="section-content footer-tagline">
-                    Crafting immersive worlds and digital experiences through
-                    innovative game development and technical excellence.
-                  </p>
                 </div>
-                <div class="footer-actions-grid">
-                  <a href="#">
-                    <div class="btn footer-action-card btn-primary">
-                      <div class="footer-card-icon">
-                        <svg
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          viewBox="0 0 24 24"
+                
+                <div class="footer-actions-grid" id="contact">
+                  
+                  <div id="resume" class="cta-item">
+                    <div class="cta-icon-box">
+                      <svg
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path
-                              d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
-                            ></path>
-                            <path
-                              d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"
-                            ></path>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="footer-card-content">
-                        <span class="footer-card-title">View Resume</span>
-                        <span class="footer-card-sub">
-                          Technical CV &amp; Skills
-                        </span>
-                      </div>
+                          <path
+                            d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
+                          ></path>
+                          <path
+                            d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"
+                          ></path>
+                        </g>
+                      </svg>
                     </div>
-                  </a>
-                  <a href="mailto:contact@devshowcase.com?subject=">
-                    <div class="btn footer-action-card btn-secondary">
-                      <div class="footer-card-icon">
-                        <svg
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path
-                              d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                            ></path>
-                            <rect
-                              x="2"
-                              y="4"
-                              rx="2"
-                              width="20"
-                              height="16"
-                            ></rect>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="footer-card-content">
-                        <span class="footer-card-title">Hire Me</span>
-                        <span class="footer-card-sub">
-                          contact@devshowcase.com
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="footer-navigation">
-                  <nav class="footer-nav-list">
-                    <a href="index.html">
-                      <div class="footer-nav-link"><span>Home</span></div>
-                    </a>
-                    <a href="#projects">
-                      <div class="footer-nav-link"><span>Projects</span></div>
-                    </a>
-                    <a href="#about">
-                      <div class="footer-nav-link"><span>Profile</span></div>
-                    </a>
-                  </nav>
-                  <div class="footer-social-cluster">
-                    <a href="#">
-                      <div aria-label="GitHub" class="footer-social-btn">
-                        <svg
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path
-                              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5c.08-1.25-.27-2.48-1-3.5c.28-1.15.28-2.35 0-3.5c0 0-1 0-3 1.5c-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5c-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"
-                            ></path>
-                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                          </g>
-                        </svg>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div aria-label="LinkedIn" class="footer-social-btn">
-                        <svg
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path
-                              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"
-                            ></path>
-                            <circle r="2" cx="4" cy="4"></circle>
-                          </g>
-                        </svg>
+                    <h3 class="section-subtitle" style="color: black;">Professional Resume</h3>
+                    <p class="section-content" style="color: black;">
+                      Download my full CV for a detailed overview of my experience
+                      and certifications.
+                    </p>
+                    <a href="./assets/Macario_Laurel_CV.pdf" download="Macario_Laurel_Resume.pdf">
+                      <div class="btn btn-lg btn-secondary">
+                        <span>Download CV</span>
                       </div>
                     </a>
                   </div>
+
+                  <div class="cta-item">
+                    <div class="cta-icon-box">
+                      <svg
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                          <rect x="2" y="4" rx="2" width="20" height="16"></rect>
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 class="section-subtitle" style="color: black;">Get In Touch</h3>
+                    <p class="section-content" style="color: black;">
+                      Interested in a collaboration or have a project in mind? Let's
+                      connect.
+                    </p>
+                    <a href="mailto:macario_laurel@dlsu.edu.ph?subject=">
+                      <div class="btn btn-lg btn-outline btn-gmail">
+                        <span>Send Email</span>
+                      </div>
+                    </a>
+                    
+                    <a href="https://github.com/xmarkiman80ox" target="_blank" style="margin-top: 10px; display: block;">
+                      <div class="btn btn-lg btn-outline btn-github">
+                        <span>View Github Profile</span>
+                      </div>
+                    </a>
+
+                  </div>
+
                 </div>
+
+               
                 <div class="footer-legal-bar">
                   <p class="footer-copyright">
-                    &amp;copy; 2026 DevShowcase. All systems operational.
+                    © 2026 Macario Laurel. Built with HTML, and TeleportHQ.
                   </p>
-                  <div class="footer-legal-links">
-                    <a href="#">
-                      <div class="footer-legal-link">
-                        <span>Privacy Policy</span>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="footer-legal-link">
-                        <span>Terms of Service</span>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
             </footer>
@@ -1004,37 +944,700 @@
             </div>
           </div>
         </footer-wrapper>
-        <a href="https://play.teleporthq.io/signup">
-          <div aria-label="Sign up to TeleportHQ" class="home-container6">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 19 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="home-icon34"
-            >
-              <path
-                d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
-                fill="#B23ADE"
-              ></path>
-              <path
-                d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
-                fill="#FF5C5C"
-              ></path>
-              <path
-                d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
-                fill="#2874DE"
-              ></path>
-            </svg>
-            <span class="home-text34">Built in TeleportHQ</span>
-          </div>
-        </a>
+       
       </div>
       <link
         rel="canonical"
         href="https://firsthand-humble-goldfish-xm3ayq.teleporthq.app/"
       />
+      
+      <style>
+        /* Modal Background Overlay */
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.85); /* Dark background */
+          backdrop-filter: blur(5px); /* Glass blur effect */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 10000;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* State: Open */
+        .modal-overlay.open {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        /* The Modal Box - UPDATED for Fixed Height & Scrolling */
+        .modal-container {
+          background-color: #ffffff; /* Updated to White */
+          border: 1px solid rgba(0, 0, 0, 0.1); /* Updated border */
+          padding: 2.5rem;
+          border-radius: 12px;
+          max-width: 600px;
+          width: 90%;
+          
+          /* Fixed Size & Layout */
+          max-height: 80vh; /* Limits height to 80% of screen */
+          display: flex; /* Flexbox layout */
+          flex-direction: column; /* Stack children vertically */
+          
+          transform: scale(0.95) translateY(20px);
+          transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+          color: #000000; /* Ensure default text is black */
+        }
+
+        .modal-overlay.open .modal-container {
+          transform: scale(1) translateY(0);
+        }
+
+        /* Header Layout */
+        .modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 1.5rem;
+          border-bottom: 1px solid rgba(0,0,0,0.1); /* Updated separator */
+          padding-bottom: 1rem;
+          flex-shrink: 0; /* Prevents header from shrinking */
+        }
+
+        /* Title styling with Flexbox for Repo Icon alignment */
+        .modal-title {
+          font-family: "Rubik", sans-serif;
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #000000; /* Updated Title Color */
+          margin: 0;
+          display: flex;
+          align-items: center;
+          gap: 12px; /* Space between text and icon */
+          flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+        }
+
+        /* Repository Link BUTTON Styling */
+        .modal-repo-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px; /* Space between icon and text */
+          
+          /* Dark pill shape */
+          background-color: #24292e; /* GitHub Dark */
+          color: #ffffff;
+          padding: 6px 14px;
+          border-radius: 20px;
+          
+          font-family: 'Inter', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-decoration: none;
+          
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .modal-repo-btn svg {
+          width: 20px;
+          height: 20px;
+          fill: currentColor;
+        }
+
+        .modal-repo-btn:hover {
+          background-color: #6e5494; /* GitHub Purple on Hover */
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* App Link BUTTON Styling (Specifically for Adalo Links) */
+        .modal-app-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px; /* Space between icon and text */
+          
+          /* Custom App Cyan shape */
+          background-color: #32e0c4;
+          color: #000000;
+          padding: 6px 14px;
+          border-radius: 20px;
+          
+          font-family: 'Inter', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 700;
+          text-decoration: none;
+          
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .modal-app-btn svg {
+          width: 20px;
+          height: 20px;
+          stroke: currentColor;
+        }
+
+        .modal-app-btn:hover {
+          background-color: #24a892; /* Darker Cyan on Hover */
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Close Button 'X' */
+        .modal-close {
+          background: none;
+          border: none;
+          color: #333333; /* Updated Close Icon Color */
+          font-size: 2rem;
+          cursor: pointer;
+          line-height: 0.8;
+          transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+          color: #ff5c5c;
+          transform: rotate(90deg);
+        }
+
+        /* Content Text - UPDATED for Scrolling */
+        .modal-body {
+          color: #000000; /* Updated Body Text Color */
+          font-family: "Inter", sans-serif;
+          line-height: 1.7;
+          margin-bottom: 1.5rem; /* Slightly reduced */
+          font-size: 1.1rem;
+          
+          /* Scroll logic */
+          overflow-y: auto; /* Scroll ONLY this part */
+          flex: 1; /* Takes up remaining space */
+          padding-right: 10px; /* Space for scrollbar */
+        }
+        
+        /* Custom Scrollbar Styling */
+        .modal-body::-webkit-scrollbar {
+          width: 8px;
+        }
+        .modal-body::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+          border-radius: 4px;
+        }
+        .modal-body::-webkit-scrollbar-thumb {
+          background: #ccc; 
+          border-radius: 4px;
+        }
+        .modal-body::-webkit-scrollbar-thumb:hover {
+          background: #aaa; 
+        }
+
+        /* Footer Button */
+        .modal-footer {
+          display: flex;
+          justify-content: flex-end;
+          flex-shrink: 0; /* Prevents footer from shrinking */
+          padding-top: 1rem; /* Added spacing from content */
+        }
+      </style>
+
+      <div id="project-modal" class="modal-overlay">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 id="modal-title" class="modal-title">Project Details</h3>
+            <button id="modal-close" class="modal-close" aria-label="Close Modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-desc">Loading details...</p>
+          </div>
+          <div class="modal-footer">
+            <button id="modal-action" class="btn btn-primary btn-sm">Close Window</button>
+          </div>
+        </div>
+      </div>
+
+      <audio id="audio-stormy-stage" src="./assets/Audio/Haunted_House_Stage.mp3"></audio>
+      <audio id="audio-stormy-menu" src="./assets/Audio/Main_Menu_Theme.mp3"></audio>
+      <audio id="audio-stormy-char" src="./assets/Audio/MainChar_Theme.mp3"></audio>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const modal = document.getElementById('project-modal');
+          const closeBtn = document.getElementById('modal-close');
+          const actionBtn = document.getElementById('modal-action');
+          const modalTitle = document.getElementById('modal-title');
+          const modalDesc = document.getElementById('modal-desc');
+
+          // --- 1. REPO LINKS CONFIGURATION ---
+          const repoLinks = {
+            "Semester Saga": "https://github.com/username/semester-saga",
+            "Kalu-Cookan": "https://github.com/username/kalu-cookan",
+            "The Stormy Woods": "https://github.com/username/stormy-woods",
+            "Mystic Warriors: Quest of The Elements": "https://github.com/username/mystic-warriors",
+            "Panophobia": "https://github.com/username/panophobia",
+            "Asteroid Flash": "https://github.com/username/asteroid-flash",
+            "A Text-Based \"Pokémon\" Game": "https://github.com/username/text-pokemon",
+            "Battle Tank with AI": "https://github.com/username/battle-tank-ai",
+            "Elden Rogue: A Text-Based RPG": "https://github.com/username/elden-rogue",
+            "C++ Coded Physics Engine From Scratch": [
+                { label: "Phase 1 Repo", url: "https://github.com/username/physics-phase-1" },
+                { label: "Phase 2 Repo", url: "https://github.com/username/physics-phase-2" },
+                { label: "Phase 3 Repo", url: "https://github.com/username/physics-phase-3" }
+            ],
+            "Furnished Apartment Designed in Unreal Engine 5": "https://github.com/username/ue5-apartment",
+            "Receipt Buddy": "https://julio-pratss-team.adalo.com/file-management-app",
+            "Baldur's Door (A Unity-Developed Baldur's Gate Inspired Project)": "https://github.com/username/baldurs-gate-mobile"
+          };
+
+          // Helper Function to Generate Gallery HTML
+          const generateGallery = (pathPattern, count, altPrefix, gridClass = 'screenshot-grid', imageClass = 'project-screenshot') => {
+            let html = '<div class="' + gridClass + '">';
+            for (let i = 1; i <= count; i++) {
+              // Replaces ${i} in the pathPattern with the actual number
+              const src = pathPattern.replace('${i}', i);
+              html += '<img src="' + src + '" alt="' + altPrefix + ' ' + i + '" class="' + imageClass + '">';
+            }
+            html += '</div>';
+            return html;
+          };
+
+          // Data source for project details (Simulated from CV)
+          const projectData = {
+            "Semester Saga": `
+              <strong>Role:</strong> UI Engineer<br>
+              <strong>Tools:</strong> Unity, C#<br><br>
+              A slice-of-life Strategy-RPG that puts you in the shoes of a burnt-out, broke college student struggling to balance daily academics and personal life. The game utilizes a 2.5D top-down perspective, blending custom 2D character sprites inspired by visual novels with 3D environments.
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">Game Gallery (14 Screenshots)</h4>
+                ${generateGallery('./assets/Semester Saga Samples/screenshot-${i}.png', 14, 'Semester Saga Screenshot')}
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Unusual Turn-Based Combat:</strong> Battle your literal projects, exams, and even your own pillowcase in a JRPG-style combat system.</li>
+                <li><strong>Time & Phase Management:</strong> Navigate a Day/Night cycle with strictly timed phases. Manage your limited time wisely to accomplish daily tasks.</li>
+                <li><strong>Player Stats System:</strong> Engage in various activities to build stats, which determine the events you trigger and your success rate throughout the game.</li>
+                <li><strong>Integrated Mini-Games:</strong> Break up the core gameplay loop with diverse mini-games including Diner Dash, Test Your Might, Reaction Time, and Speed Typing.</li>
+              </ul>
+            `,
+            "Kalu-Cookan (Development In-Progress Game)": `
+              <strong>Role:</strong> Game Developer<br>
+              <strong>Tools:</strong> Unity, C#<br><br>
+              This game is a current work-in-progress mobile game, developed in Unity using C#. It's an educative game aimed at educating players about healthier ingredient alternatives for Filipino food. The game also contains interactive cooking features using basic finger gestures.
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">In-Game Gallery (Taken in Unity Engine Mobile Simulator)</h4>
+                ${generateGallery('./assets/Kalu-Cookan Samples/screenshot-${i}.png', 5, 'Kalu-Cookan Screenshot')}
+              </div>
+            `,
+            "The Stormy Woods": `
+              <div class="audio-modal-container">
+                <strong>Audio Samples:</strong>
+                <div class="audio-controls">
+                  <button class="btn btn-audio" type="button" data-label="Haunted House" onclick="toggleAudio('audio-stormy-stage', this)">
+                    <span>▶ Haunted House Stage</span>
+                  </button>
+                  
+                  <button class="btn btn-audio" type="button" data-label="Main Menu" onclick="toggleAudio('audio-stormy-menu', this)">
+                    <span>▶ Main Menu Theme</span>
+                  </button>
+                  
+                  <button class="btn btn-audio" type="button" data-label="Main Char" onclick="toggleAudio('audio-stormy-char', this)">
+                    <span>▶ Main Character Theme</span>
+                  </button>
+                </div>
+              </div>
+
+              <strong>Role:</strong> Composer<br>
+              <strong>Date:</strong> February 2021 (School Project)<br><br>
+              Composed and produced an original Main Theme, A Stage Theme, and A Main Character Theme for a Horror Game Concept, “The Stormy Woods”. 
+              Utilized open-source SFX libraries, performing audio manipulation and equalization to match the game’s unique sound palette.<br><br>
+              <strong>Tools Used:</strong> TRACKTION WAVEFORM (Audio Engine utilizing MIDI sequencing and VST instrumentation).
+            `,
+            "Mystic Warriors: Quest of The Elements": `
+              <strong>Role:</strong> UI/UX Project Lead Designer<br>
+              <strong>Date:</strong> September 2021 (Adobe XD Design Concept)<br><br>
+              Lead a team to design a high-fidelity UI/UX Prototype for a card game concept, called “Mystic Warriors: Quest for The Elements”. 
+              The game captures a mystical ambiance for its dark fantasy theme, containing textures reminiscent of fantasy medieval RPG games (wood and gems).
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">Prototype Gallery</h4>
+                ${generateGallery('./assets/Mystic Warriors Samples/screenshot-${i}.png', 20, 'Mystic Warriors Screenshot')}
+              </div>
+
+              <br><strong>Deliverables:</strong> UI/UX designs for the Main Menu, Level Select Screen and Main Gameplay Interface.<br>
+              <strong>Tools Used:</strong> Adobe XD, Photoshop.
+            `,
+            "Panophobia": `
+              <strong>Role:</strong> Developer (Machine Project)<br>
+              <strong>Status:</strong> Academic Project (GDPROG3)<br>
+              <strong>Date:</strong> April 2023<br><br>
+              A panoramic first-person investigative horror game inspired by Phasmophobia. The game simulates a 3D environment using 2D panoramic views, where players investigate haunted locations to identify ghost types.
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">In-Game Gallery</h4>
+                ${generateGallery('./assets/Panophobia Samples/screenshot-${i}.png', 5, 'Panophobia Screenshot')}
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Panoramic View System:</strong> Limits player view to one wall at a time, allowing panning Left, Right, and Down to inspect room details.</li>
+                <li><strong>Turn-Based Gameplay:</strong> Implements a game loop that waits for user input before processing Ghost AI, using cooldowns to simulate real-time tension.</li>
+                <li><strong>Ghost AI Decision Tree:</strong> Complex enemy logic that decides between Idling, Interacting, Using Abilities, or Hunting based on RNG and player sanity.</li>
+                <li><strong>Investigation Mechanics:</strong> Features a Sanity System (Passive/Active drain), Evidence Collection (EMF, Ghost Orbs), and a Parabolic Microphone mechanic.</li>
+                <li><strong>Dual Phase Implementation:</strong> Developed in two stages: Phase 1 (Text-Based TUI) and Phase 2 (Graphical GUI).</li>
+              </ul>
+            `,
+            "Asteroid Flash": `
+              <strong>Role:</strong> Project Lead / Lead Programmer<br>
+              <strong>Date:</strong> February 2022<br><br>
+              Developed a 2D math-based serious game arcade shooter catered to Grade 1 students to help them hone their mathematical arithmetic skills using the <strong>Godot Engine (GDScript)</strong>.<br><br>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Engineered a system where enemies (Aliens/Asteroids) are procedurally assigned random mathematical operators (+, -, x, /) and values.</li>
+                <li>Developed a "Big Asteroid" mechanic: players must reach a specific value from smaller asteroids to complete the level.</li>
+                <li>Programmed responsive player movement, projectile physics using CharacterBody2D, and collision detection.</li>
+              </ul>
+            `,
+            "A Text-Based \"Pokémon\" Game": `
+              <strong>Role:</strong> Solo Developed C Coded Game<br>
+              <strong>Date:</strong> June 2022<br><br>
+              Developed a text-based Pokémon-like game from scratch purely written in <strong>C (DEV C++)</strong>. 
+              Graphics and Visualizations are done entirely in text, using spacing and indentations to replicate the familiar 1v1 turn-based combat layout.<br><br>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Implemented a Shop system for upgrades.</li>
+                <li>String parsing system for player inputs.</li>
+                <li>Color-coded text to distinguish actions, players, and enemies.</li>
+              </ul>
+            `,
+            "Battle Tank with AI": `
+              <strong>Role:</strong> AI Programmer / Game Developer<br>
+              <strong>Status:</strong> Academic Project (GDINTAI)<br><br>
+              A 2D tank battle game inspired by "Battle City" where the player fights against an intelligent AI agent. The goal is to destroy the opponent's bases while defending your own within a 2-minute time limit.
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">Gameplay Screenshot</h4>
+                <img src="./assets/Battle Tank Samples/screenshot-1.png" alt="Battle Tank Gameplay" class="project-screenshot" style="width: 100%; height: auto; cursor: default;">
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Intelligent AI Agent:</strong> Developed a rational bot capable of countering player movements and making strategic decisions to attack bases or defend its own.</li>
+                <li><strong>Dynamic Power-Up System:</strong> Implemented random power-up spawns every 15-20 seconds, including Speed Up, Speed Down, Base Invincibility, Mines, and Chaos (Base Teleportation).</li>
+                <li><strong>Win Conditions & Scoring:</strong> Complex victory logic based on base destruction, kill counts, or a timer-based draw system.</li>
+                <li><strong>Combat Mechanics:</strong> Features bullet physics, base destruction mechanics (stepping over bases), and respawn systems.</li>
+              </ul>
+            `,
+            "Elden Rogue: A Text-Based RPG": `
+              <strong>Role:</strong> Solo Developed C Coded Game<br>
+              <strong>Date:</strong> December 2022<br><br>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Built a text-based Dungeon Crawler from scratch using C, implementing character movement purely using Array Data types.</li>
+                <li>Laid out and developed character classes with given stats that the player will select during the start of the game. These stats influence combat such as damage calculations, evasion rates and enemy AI logic.</li>
+                <li>Utilized C Language’s file reading system to read custom text-based level sheets.</li>
+                <li>Demonstrated proficiency in manual memory handling and pointer arithmetic to efficiently track player progression and enemy data.</li>
+              </ul>
+            `,
+            "C++ Coded Physics Engine From Scratch": `
+              <strong>Role:</strong> Solo Developer<br>
+              <strong>Tools:</strong> C++, Custom Graphics Library<br><br>
+              A high-performance 2D physics engine built from the ground up to demonstrate understanding of rigid body dynamics, collision detection, and resolution algorithms across three distinct phases.
+              
+              <h3 style="margin-top:2rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Phase 1: Particle Dynamics</h3>
+              <div class="video-container" style="margin-top: 1rem;">
+                <video controls autoplay loop muted playsinline style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <source src="./assets/Physics_Phase1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <ul style="margin-top: 1rem;">
+                <li><strong>Vector Implementation:</strong> Utilized custom 2D vector math library for position and velocity calculations.</li>
+                <li><strong>Particle System:</strong> Implemented particle entities with lifespan properties; particles cease rendering after a set duration.</li>
+                <li><strong>Force Generators:</strong> Applied gravity to all active particles via a dedicated force generator.</li>
+                <li><strong>Object Pooling/Limiting:</strong> Configurable logic to limit active particles (e.g., max 25), controlled via main function parameters rather than hardcoding.</li>
+              </ul>
+
+              <h3 style="margin-top:2rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Phase 2: Mass Aggregates & Springs</h3>
+              <div class="video-container" style="margin-top: 1rem;">
+                <video controls autoplay loop muted playsinline style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <source src="./assets/Physics_Phase2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <ul style="margin-top: 1rem;">
+                <li><strong>Mass Aggregate System:</strong> Extended particle system to handle connected masses.</li>
+                <li><strong>Collision Detection:</strong> Implemented particle-particle collision detection and basic resolution.</li>
+                <li><strong>Particle Connections:</strong> Particles can be joined via <strong>Springs</strong> (elastic connection) or <strong>Rods</strong> (stiff connection).</li>
+                <li><strong>Anchors:</strong> Particles can be anchored to fixed points using Springs or Cables.</li>
+              </ul>
+
+              <h3 style="margin-top:2rem; border-bottom:1px solid #ddd; padding-bottom:0.5rem;">Phase 3: Rigidbody Physics</h3>
+              <div class="video-container" style="margin-top: 1rem;">
+                <video controls autoplay loop muted playsinline style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <source src="./assets/Physics_Phase3.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <ul style="margin-top: 1rem;">
+                <li><strong>Rigidbody System:</strong> Implemented rectangular rigid bodies with mass and inertia.</li>
+                <li><strong>Force Application:</strong> Added support for applying forces at specific points (torque generation) causing angular rotation.</li>
+                <li><strong>Advanced Collisions:</strong> Implemented Rect-Floor and Rect-Rect collision detection and resolution.</li>
+              </ul>
+            `,
+            "Furnished Apartment Designed in Unreal Engine 5": `
+              <strong>Role:</strong> Level Designer / Environment Artist<br>
+              <strong>Tools:</strong> Unreal Engine 5, Lumen, Nanite<br><br>
+              A photorealistic architectural visualization of a modern furnished apartment. This project explores the capabilities of Unreal Engine 5's real-time lighting (Lumen) and virtualized geometry (Nanite) to create an immersive, high-fidelity interior environment.
+              
+              <div class="video-container" style="margin-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem;">
+                <h4 class="gallery-title">Cinematic Walkthrough</h4>
+                <video controls autoplay loop muted playsinline onvolumechange="this.muted=true; this.volume=0;" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <source src="./assets/Furnished Apartment Demo.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <div class="screenshot-gallery-container" style="margin-top: 2rem;">
+                <h4 class="gallery-title">Environment Gallery</h4>
+                ${generateGallery('./assets/Furnished Apartment Samples/screenshot-${i}.png', 5, 'Apartment Screenshot')}
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Real-Time Global Illumination:</strong> Utilized Lumen for dynamic lighting bounces and soft shadows without baked lightmaps.</li>
+                <li><strong>High-Fidelity Assets:</strong> Curated and placed high-poly furniture assets leveraging Nanite for unlimited geometric detail.</li>
+                <li><strong>Material Design:</strong> Created custom master materials for realistic wood, fabric, and glass surfaces.</li>
+                <li><strong>Cinematic Composition:</strong> Set up sequencer camera shots to highlight spatial flow and interior design details.</li>
+              </ul>
+            `,
+            "Receipt Buddy": `
+              <strong>Role:</strong> App Developer<br>
+              <strong>Tools:</strong> Adalo (No-Code App Builder), Adobe XD<br><br>
+              Conceptualized as an "Apple Pay for Receipts", <strong>Receipt Buddy</strong> is an application designed to solve the common issue of misplacing or damaging physical receipts. It provides professionals, business owners, and working adults with a simple, gamified, and straightforward way to organize their expenses and digitally track warranties.
+              
+              <div style="background-color: rgba(255,255,255,0.05); padding: 12px 15px; border-left: 4px solid #32e0c4; margin-top: 1.5rem; font-style: italic; font-size: 0.95rem; border-radius: 0 4px 4px 0;">
+                <strong>Disclaimer:</strong> The video below demonstrates an early interactive prototype of the application. The final logic and database architecture were subsequently ported and developed fully within the Adalo no-code platform.
+              </div>
+
+              <div class="video-container" style="margin-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem;">
+                <h4 class="gallery-title">Early Prototype Demo</h4>
+                <video controls autoplay loop muted playsinline onvolumechange="this.muted=true; this.volume=0;" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <source src="./assets/Receipt Buddy Demo.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <div class="screenshot-gallery-container" style="margin-top: 2rem;">
+                <h4 class="gallery-title">App Interface</h4>
+                ${generateGallery('./assets/Receipt Buddy Samples/screenshot-${i}.png', 8, 'Receipt Buddy Screenshot', 'screenshot-grid-small', 'project-screenshot-portrait')}
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Digital Organization:</strong> Safely store and categorize receipts digitally to track warranties and reimbursements effortlessly.</li>
+                <li><strong>Simplified UX:</strong> Gamified and intuitive design specifically targeted at business owners, accountants, and working adults.</li>
+                <li><strong>Offline Accessibility:</strong> Core essential features are designed to be used effectively without requiring a constant internet connection.</li>
+                <li><strong>Expense Tracking:</strong> Key actions allow users to track stored receipts per day, categorize them by tags, and compute total expenses.</li>
+              </ul>
+            `,
+            "Baldur's Door (A Unity-Developed Baldur's Gate Inspired Project)": `
+              <strong>Role:</strong> Unity Developer / Programmer<br>
+              <strong>Tools:</strong> Unity, C#<br><br>
+              A mobile-optimized RPG inspired by Baldur's Gate 3. This academic project reconstructs classic D&D mechanics—like 20-sided dice rolls, party stat management, and turn-based grid combat—into a seamless touch-screen experience using device sensors.
+              
+              <div class="screenshot-gallery-container">
+                <h4 class="gallery-title">Gameplay</h4>
+                ${generateGallery('./assets/Baldurs Gate Samples/screenshot-${i}.png', 6, 'Baldurs Door Unity')}
+              </div>
+
+              <br><strong>Key Features:</strong>
+              <ul>
+                <li><strong>Accelerometer Dice Rolls:</strong> Core randomization relies on physical device shaking to roll a 3D d20 asset, determining success for dialogues and combat. Included Ad-integration to allow "rerolls" on failed checks.</li>
+                <li><strong>Party & Stat Management:</strong> Implemented an "Active Character" system where unique job classes and specific stat distributions (Strength, Dexterity, Charisma, etc.) dictate combat effectiveness and dialogue requirements.</li>
+                <li><strong>Dynamic Dialogue & Multiple Endings:</strong> Built a branching dialogue tree that reacts to player proximity and active stats. Choices influence a hidden alignment meter, determining one of three distinct game endings.</li>
+                <li><strong>Grid-Based Turn Combat:</strong> Developed a tactical 2D grid combat system within a 3D environment. Turn orders are dictated by Dexterity, with distinct action economies (Attack, Heal, Move) and mechanics like hit-chance and criticals driven by internal dice rolls.</li>
+                <li><strong>Advanced Mobile Inputs:</strong> Beyond standard joysticks, integrated specialized multi-touch gestures (like pinching/spreading or swiping) to enhance camera and UI interactions.</li>
+              </ul>
+            `
+          };
+
+          // Function to Close Modal
+          const closeModal = () => {
+            modal.classList.remove('open');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Stop any playing audio when modal closes
+            document.querySelectorAll('audio').forEach(el => {
+               el.pause();
+               el.currentTime = 0;
+            });
+          };
+
+          // Function to Open Modal with Dynamic Content
+          const openModal = (title) => {
+            // 1. Reset Title
+            modalTitle.innerHTML = "";
+            const titleSpan = document.createElement("span");
+            titleSpan.textContent = title;
+            modalTitle.appendChild(titleSpan);
+
+            // 2. Check if there is a Repo Link for this project
+            const repoData = repoLinks[title];
+            
+            if (repoData) {
+              // Helper to create a single button
+              const createBtn = (url, text) => {
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = "_blank";
+                
+                // Logic to detect Adalo links and apply a different design
+                if (url.includes('adalo.com')) {
+                  link.className = "modal-app-btn";
+                  link.title = "View Live App";
+                  link.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <span>View Live App</span>
+                  `;
+                } else {
+                  link.className = "modal-repo-btn";
+                  link.title = "View Source Code on GitHub";
+                  link.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>${text}</span>
+                  `;
+                }
+
+                return link;
+              };
+
+              // Handle Array of Links (Physics Engine) vs Single Link
+              if (Array.isArray(repoData)) {
+                 repoData.forEach(item => {
+                    modalTitle.appendChild(createBtn(item.url, item.label));
+                 });
+              } else {
+                 modalTitle.appendChild(createBtn(repoData, "View Repository"));
+              }
+            }
+            
+            // 3. Set Body Content
+            if (projectData[title]) {
+              modalDesc.innerHTML = projectData[title];
+            } else {
+              // Fallback content
+              modalDesc.innerHTML = `
+                This is an interactive case study for <strong>${title}</strong>. 
+                <br><br>
+                In a full production environment, this popup would contain technical specifications, 
+                screenshots of the code architecture, and a playable demo link.
+              `;
+            }
+            
+            // 4. Adjust Modal Size for Specific Projects
+            const modalContainer = document.querySelector('.modal-container');
+            if (title === "C++ Coded Physics Engine From Scratch" || title === "Receipt Buddy" || title === "Furnished Apartment Designed in Unreal Engine 5" || title === "Baldur's Door (A Unity-Developed Baldur's Gate Inspired Project)" || title === "Semester Saga") {
+              modalContainer.style.maxWidth = "900px";
+              modalContainer.style.maxHeight = "95vh";
+            } else {
+              modalContainer.style.maxWidth = "600px";
+              modalContainer.style.maxHeight = "80vh";
+            }
+            
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+          };
+
+          // Select all "View Project Details" buttons inside the project cards
+          const buttons = document.querySelectorAll('.project-card .btn-accent');
+
+          buttons.forEach(btn => {
+            const link = btn.closest('a');
+            
+            if (link) {
+              link.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                
+                const card = link.closest('.project-card');
+                const title = card.querySelector('.project-card-title').textContent;
+                
+                openModal(title);
+              });
+            }
+          });
+
+          // Event Listeners for Closing
+          closeBtn.addEventListener('click', closeModal);
+          actionBtn.addEventListener('click', closeModal);
+          
+          // Close if user clicks the dark background
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+
+          // Close if user presses ESC key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+              closeModal();
+            }
+          });
+        });
+
+        // Function to handle Audio Playback with multiple buttons
+        function toggleAudio(audioId, button) {
+          const audio = document.getElementById(audioId);
+          const span = button.querySelector('span');
+          const label = button.getAttribute('data-label');
+
+          // Pause all other audio files first
+          document.querySelectorAll('audio').forEach(el => {
+            if (el.id !== audioId) {
+               el.pause();
+               el.currentTime = 0;
+            }
+          });
+
+          // Reset text of all other audio buttons to "Play" icon
+          // Note: Since these buttons are created dynamically, we target the class
+          document.querySelectorAll('.btn-audio').forEach(btn => {
+            if (btn !== button) {
+               const otherLabel = btn.getAttribute('data-label');
+               // Only reset if it has a label (avoids errors on other buttons)
+               if(otherLabel) {
+                   btn.querySelector('span').textContent = "▶ " + otherLabel;
+                   btn.classList.remove('active-audio');
+               }
+            }
+          });
+
+          // Toggle Play/Pause for current audio
+          if (audio.paused) {
+            audio.play();
+            span.textContent = "⏸ " + label;
+            button.classList.add('active-audio');
+          } else {
+            audio.pause();
+            span.textContent = "▶ " + label;
+            button.classList.remove('active-audio');
+          }
+        }
+      </script>
+
     </div>
   </body>
 </html>
